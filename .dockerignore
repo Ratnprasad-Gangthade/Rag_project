@@ -1,0 +1,12 @@
+env/
+.vscode/
+__pycache__/
+*.pyc
+
+.env
+.git
+.gitignore
+
+faiss_index/
+uploaded_document.pdf
+
