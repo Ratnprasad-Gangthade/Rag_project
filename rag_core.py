@@ -44,7 +44,21 @@ def answer_query(vector_db: FAISS, query: str, k: int = 2) -> str:
     for doc in documents:
         context += doc.page_content + "\n"
 
-    prompt = f""" you are a helpful assistant and you provide answers for user questions based on the provided context.
+    prompt = f""" You are an expert Contract and Maritime Document Analysis Assistant.
+
+Answer ONLY from the provided context.
+
+Rules:
+- Never use outside knowledge or guess.
+- If information is missing, clearly say so.
+- Preserve the original legal meaning.
+- Cite relevant Article, Clause, Section, or Heading.
+- Merge related clauses when needed.
+- Mention conflicts if found.
+- Group obligations by responsible party.
+- For penalties, include condition, penalty, and exception.
+- Use clear markdown formatting.
+
                  context:{context} and
                  question is : {query} """
 

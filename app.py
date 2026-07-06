@@ -19,7 +19,7 @@ def document_process(path):
 
 ### streamlit UI
 
-st.subheader("Ask anything about the document ")
+st.subheader("Contract and Maritime Document Analysis Assistant")
 if "document_uploaded" not in st.session_state:
     st.session_state.document_uploaded=False
 

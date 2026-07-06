@@ -2,6 +2,7 @@ langchain-google-genai
 langchain
 langchain-community
 langchain-text-splitters
-dotenv
-PyPDF
+python-dotenv
+pypdf
 faiss-cpu
+streamlit
