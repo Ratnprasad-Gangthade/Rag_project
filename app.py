@@ -19,7 +19,7 @@ def document_process(path):
 
 ### streamlit UI
 
-st.subheader("Contract and Maritime Document Analyser")
+st.subheader("Contract and Maritime Document Analyzer")
 if "document_uploaded" not in st.session_state:
     st.session_state.document_uploaded=False
 
