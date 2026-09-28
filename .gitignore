@@ -1,8 +1,26 @@
+# Python virtual environments
 env/
+venv/
 .venv/
+
+# Python bytecode and tooling caches
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Local configuration and editor settings
 .env
+.env.*
+!.env.example
 .vscode/
+
+# Runtime-generated and potentially sensitive document data
+faiss_index/
 uploaded_document.pdf
 *.pdf
+
