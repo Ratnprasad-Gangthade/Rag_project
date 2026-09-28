@@ -4,12 +4,13 @@ from langchain_community.document_loaders import PyPDFLoader
 from langchain_community.vectorstores import FAISS
 from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
+from langchain_groq import ChatGroq
 
 
-load_dotenv()
+load_dotenv(override=True)
 
 
-llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash")
+llm = ChatGroq(model="openai/gpt-oss-120b")
 
 def build_vector_db(pdf_path: str) -> FAISS:
 
@@ -37,7 +38,7 @@ def build_vector_db(pdf_path: str) -> FAISS:
     return vector_db
 
 
-def answer_query(vector_db: FAISS, query: str, k: int = 2) -> str:
+def answer_query(vector_db: FAISS, query: str, k: int = 5) -> str:
     documents = vector_db.similarity_search(query=query, k=k)
     context = ""
 
@@ -46,7 +47,7 @@ def answer_query(vector_db: FAISS, query: str, k: int = 2) -> str:
 
     prompt = f""" You are an expert Contract and Maritime Document Analysis Assistant.
 
-Answer ONLY from the provided context.
+Answer from the provided context.
 
 Rules:
 - Never use outside knowledge or guess.
