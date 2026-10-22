@@ -10,7 +10,7 @@ from langchain_groq import ChatGroq
 load_dotenv(override=True)
 
 
-llm = ChatGroq(model="openai/gpt-oss-120b")
+llm = ChatGroq(model="openai/gpt-oss-120b", max_tokens=350)
 
 def build_vector_db(pdf_path: str) -> FAISS:
 
